@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block background %}{% static 'core/images/abarrote1.jpg' %}{% endblock %}
+
+{% block headers %}
+	<!-- Static Header -->
+    <div class="header-text">
+       	<div class="header-text-inner">
+            <h1>Aranda Amoblaminetos</h1>
+            <p>Lo mismo pero mas barato</p>
+        </div>
+    </div><!-- /header-text -->
+{% endblock %}
+
+{% block content %}
+		<section class="box-content box-6">
+			<div class="container">
+				<div class="heading wow fadeInUp" data-wow-delay=".1s" data-wow-duration="1s">
+					<h2>Catalogo de Productos</h2>
+					<hr class="line">
+					<div class="intro">Agregados recientemente</div>
+				</div>
+				<div class="content">
+					<div id="owl-blog" class="owl-carousel">
+						{% for product in product %}
+						<div class="item">
+							<div class="box-item">
+								<img src="{{product.image.url}}" class="img-responsive"/>
+								<div class="content">
+									<h3><a href="">{{product.name}}</a></h3>
+									<p>{{product.description}}</p>
+									<p>${{product.price}}</p>
+									<span>Agosto 14, 2019 Por Admin</span><br>
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+
+{% endblock %}

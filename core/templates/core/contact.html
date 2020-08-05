@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block background %}{% static 'core/images/sup_showcase_bg.jpg' %}{% endblock %}
+
+{% block headers %}
+	<!-- Static Header -->
+    <div class="header-text">
+       	<div class="header-text-inner">
+            <h1>Contactos</h1>
+        </div>
+    </div><!-- /header-text -->
+{% endblock %}
+
+{% block content %}
+	<div>
+		<!-----------------Content-------------------->
+		
+		<section class="box-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 box-item">
+						<h3>Informacion de contacto</h3>
+						<span>Contactanos para mas informacion acerca de nuestros catalogo de productos</span><br> <br>
+						<p>Calle Juarez No. 122 Huamantla, Tlaxcala<br></p>
+						   <p>247-122-5701<br></p>
+						<p>abarrotesely@gmail.com</p>
+					</div>
+					
+					<div class="col-md-8">
+						<h3>Formulario de Contacto</h3>
+						<form name="form1" method="post" action="contact.php">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+									<input type="text" class="form-control input-lg" name="name" id="name" placeholder="Nombre" required="required" />
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<input type="email" class="form-control input-lg" name="email" id="email" placeholder="Email" required="required" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<input type="text" class="form-control input-lg" name="subject" id="subject" placeholder="Tema" required="required" />
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-group">
+										<textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required" placeholder="Mensaje" style="height: 170px;"></textarea>
+									</div>						
+									<button type="submit" class="btn btn-skin btn-block" name="submitcontact" id="submitcontact">Enviar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		
+		</section>
+	</div>
+{% endblock %}

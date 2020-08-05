@@ -1,0 +1,63 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}About us{% endblock %}
+
+{% block background %}{% static 'core/images/bg.jpg' %}{% endblock %}
+
+{% block headers %}
+	<!-- Static Header -->
+    <div class="header-text">
+       	<div class="header-text-inner">
+            <h1>ACERCA DE NOSOTROS</h1>
+        </div>
+    </div><!-- /header-text -->
+{% endblock %}
+
+{% block content %}
+	<div>
+		
+		<div class="box-content">
+			<div class="container">
+				<!-----------------Content-------------------->
+
+				<article class="single-post">
+					<div class="wrap-post"><!--Start Box-->
+						<div class="entry-header text-center">
+							<h1 class="entry-title">HISTORIA</h1>
+						</div>
+						<div class="post-thumbnail-wrap">
+							<div class="portfolio-box zoom-effect">
+								<img src="images/single.jpg" class="img-responsive" alt="">
+							</div>
+						</div>
+						<div class="entry-content">
+							<h2>Aranda Amoblamientos</h2>
+							<div class="excerpt"><p>
+							</p></div><br>
+							
+							<h2>Misión</h2>
+							<p>Abarrotes Ely una empresa de excelente calidad, que da un buen servicio para el público en general tomando en cuenta las necesidades de los mismos.
+							Para nosotros es importante la responsabilidad para satisfacer los gustos y las necesidades de nuestros clientes. En Abarrotes Ely ayudamos a nuestros clientes a encontrar lo que busca pero sobretodo darle lo mejor de nosotros.</p><br>
+							
+							<h2>Visión</h2>
+							<p>Ser la mejor tienda de abarrores en la region conseguir un mejor posicionamiento gracias al reconocimiento de nuestros clientes logrando un mejor desempeño en nuestro servicio.
+							</p><br>
+							
+							<h2>Valores</h2>
+							<p>•	RESPONSABILIDAD: Hacer las cosas con mayor importancia tomando en cuenta que los clientes y compañeros de trabajo deben notar que nuestros productos son de la mayor calidad y de confianza posible que podamos otorgar. <br><hr>
+
+							•	RESPETO: Consideración que se tienen, a las personas por los valores que presentan o por la trayectoria de años que los avalan, ya sea de manera profesional o personal. <br><hr>
+
+							•	HONESTIDAD: Realizar su trabajo de manera transparente, para asi poder brindar productos de buena calidad al cliente o consumidor pues esto genera más confianza en los mismos.
+							</p>
+							
+						</div>
+					</div>
+				</article>
+			
+			</div>	
+		</div>
+	</div>
+{% endblock %}

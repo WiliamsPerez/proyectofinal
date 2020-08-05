@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %} | Aranada</title>
+
+  {% load static %}
+
+  <!-- Estilos y fuentes del template  -->
+
+  <link href="{% static 'core/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'core/css/animate.css' %}" rel="stylesheet" media="all" type="text/css">
+  <link href="{% static 'core/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'core/owl-carousel/owl.carousel.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top" class="index-page">
+  <div class="wrap-body">
+    <header style="background-image: url('{% block background %}{% endblock %}')">
+        <!---Main Header--->
+        <div class="main-header">
+        
+          <!--Navigation-->
+          <nav id="menu" class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+                <a class="navbar-brand" href="{% url 'home' %}">
+                  <img src="" width="280px"/>ARANDA AMOBLAMINETOS 
+                </a>
+              </div>
+              <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+                
+                  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Categorías<i class="fa fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" style="margin-left: -203.625px;">
+                      <div class="dropdown-inner">
+                        <ul class="list-unstyled">
+                          <li><a href=""></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="{% if request.path == '/about/' %} active {% endif %}"><a href="{% url 'about' %}">Acerca de</a></li>
+                  <li class="{% if request.path == '/contact/' %} active {% endif %}"><a href="{% url 'contact' %}">Contacto</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          {% block headers %}{% endblock %}
+          
+        </div>
+    </header>
+
+    {% block content %}{% endblock %}
+
+      <!-- Pié de página -->
+      <footer id="footer" style="position: relative;">
+        <div class="container">
+          <div class="wrap-footer">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="footer-contact-form">
+                  <h2 class="footer-title">Deja un mensaje</h2>
+                  <form name="" method="post" action="contact.php">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Nombre" required="required" />
+                        </div>
+                        <div class="form-group">
+                          <input type="email" class="form-control input-lg" name="email" id="email" placeholder="Email" required="required" />
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control input-lg" name="subject" id="subject" placeholder="Tema" required="required" />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required" placeholder="Mensaje" style="height: 190px;"></textarea>
+                        </div>            
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-skin" name="submitcontact" id="submitcontact">Enviar</button>
+                  </form>
+                </div>
+              </div>
+              
+              <div class="col-md-5">
+                <div class="footer-contact-info">
+                  <div class="contact-info-item">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <div class="contact-info-icon">
+                          <i class="fa fa-map-marker"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-10">
+                        <h3>Localización</h3>
+                        <p> Calle Juarez No. 122 Huamantla, Tlaxcala</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contact-info-item">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <div class="contact-info-icon">
+                          <i class="fa fa-phone"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-10">
+                        <h3>Numero de contacto</h3>
+                        <p> 247-122-5701 </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contact-info-item">
+                    <div class="row">
+                      <div class="col-md-1">
+                        <div class="contact-info-icon">
+                          <i class="fa fa-envelope"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-10">
+                        <h3>Email</h3>
+                        <p>abarrotesely@gmail.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <ul class="list-inline footer-link link">
+              <li><a href="facebook.com">Facebook</a></li>
+              <li><a href="twitter.com">Twitter</a></li>
+            </ul>
+            <div class="copyright">
+              <span>Copyright © 2019 - Designed by <a href="#" target="_blank">ADDISoft</a></span>
+            </div>
+          </div> 
+        </div>
+      </footer>
+  
+    <!-- Javascripts -->
+
+    <script src="{% static 'core/js/jquery-3.1.1.min.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'core/js/jquery.localScroll.min.js' %}"></script>
+    <script src="{% static 'core/js/jquery.scrollTo.min.js' %}"></script>
+    <script src="{% static 'core/js/SmoothScroll.js' %}"></script>
+    <script src="{% static 'core/js/wow.min.js' %}"></script>
+    <script src="{% static 'core/owl-carousel/owl.carousel.js' %}"></script>
+    <script src="{% static 'core/js/main.js' %}"></script>
+
+  </div>
+</body>
+</html>
